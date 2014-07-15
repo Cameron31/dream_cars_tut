@@ -1,0 +1,16 @@
+<h1>Cars</h1>
+
+<ul>
+  <li><%= link_to "All", car_index_path %></li>
+  <li><%= link_to "New", new_car_path %></li>
+</ul>
+
+<ul>
+  <% @cars.each do |car| %>
+    <li>
+      <%= link_to "#{ car.make } - #{ car.model }", car_path(car) %>
+      <span><%= link_to "Edit", edit_car_path(car) %><span>
+        <span><%= link_to "Delete", car_path(car), method: :delete %><span>
+    </li>
+  <% end %>
+</ul>
